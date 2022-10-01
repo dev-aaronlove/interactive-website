@@ -15,8 +15,215 @@
     <link rel="stylesheet" href="">
   </head>
   <body>
-    <h1>test</h1>
+    <div class="theme-panel open">
+      <div class="theme-body">
+        <span>Change Theme</span>
+        <div class="btn-group">
+          <button data-toggle="light" class="switcher-btn active">Light</button>
+          <button data-toggle="dark" class="switcher-btn">Dark</button>
+        </div>
+        <button class="theme-tab">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+      </div>
+    </div>
+
+    <main class="site-wrapper">
+      <header class="site-header">
+        <nav class="navbar">
+          <div class="brand-logo">
+            <a href=""><h2>folio.</h2></a>
+          </div>
+          <div class="navbar-nav">
+            <ul class="ul-default-none main-menu">
+              <li class="nav-item">Home</li>
+              <li class="nav-item" data-open="about">About Me</li> <!--data-open="about" tied to id="about"-->
+              <li class="nav-item" data-open="contact">Contact</li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <section class="hero-bg">
+        <div class="container">
+          <div class="hero-content">
+            <div class="code-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h2 class="header-lg">Code. Eat. Sleep.</h2>
+            <div class="sub-header">I create meaningful solutions for your brands and products.
+              <br>
+              Give your customers the best experience possible.
+            </div>
+            <div class="btn btn-primary round-pill">
+              <a href="#" data-open="contact">Let's talk now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="portfolio-section">
+        <div class="container search-container">
+          <label for="search">
+            <input autocomplete="off" id="search" class="search-input" placeholder="Search..." type="text">
+            <i class="fas fa-search"></i>
+          </label>
+          <ul class="ul-default-none portfolio-filter-nav">
+            <li data-filter="all" class="filter-link active">All Work</li>
+            <li data-filter="web" class="filter-link">Web Development</li>
+            <li data-filter="app" class="filter-link">App Development</li>
+            <li data-filter="ui" class="filter-link">UI Design</li>
+          </ul>
+        </div>
+
+        <div class="portfolio-grid">
+          <!-- <div class="portfolio-card" data-item="web">
+            <div class="card-body">
+              <img src="./assets/images/portfolio-1.jpg" alt="portfolio icon">
+              <a href="#" class="card-popup-box">
+                <div>Web Development</div>
+                <h3>Merchandise Website</h3>
+              </a>
+            </div>
+          </div>
+          <div class="portfolio-card" data-item="ui">
+            <div class="card-body">
+              <img src="./assets/images/portfolio-2.jpg" alt="portfolio icon">
+              <a href="#" class="card-popup-box">
+                <div>UI Design</div>
+                <h3>Organized Design</h3>
+              </a>
+            </div>
+          </div>
+          <div class="portfolio-card" data-item="web">
+            <div class="card-body">
+              <img src="./assets/images/portfolio-3.jpg" alt="portfolio icon">
+              <a href="#" class="card-popup-box">
+                <div>Web Development</div>
+                <h3>Shopping Website</h3>
+              </a>
+            </div>
+          </div>
+          <div class="portfolio-card" data-item="web">
+            <div class="card-body">
+              <img src="./assets/images/portfolio-4.jpg" alt="portfolio icon">
+              <a href="#" class="card-popup-box">
+                <div>Web Development</div>
+                <h3>Business Website</h3>
+              </a>
+            </div>
+          </div>
+          <div class="portfolio-card" data-item="app">
+            <div class="card-body">
+              <img src="./assets/images/portfolio-5.jpg" alt="portfolio icon">
+              <a href="#" class="card-popup-box">
+                <div>App Development</div>
+                <h3>Graphics App</h3>
+              </a>
+            </div>
+          </div>
+          <div class="portfolio-card" data-item="app">
+            <div class="card-body">
+              <img src="./assets/images/portfolio-6.jpg" alt="portfolio icon">
+              <a href="#" class="card-popup-box">
+                <div>App Development</div>
+                <h3>Finance App</h3>
+              </a>
+            </div>
+          </div>
+          <div class="portfolio-card" data-item="app">
+            <div class="card-body">
+              <img src="./assets/images/portfolio-7.jpg" alt="portfolio icon">
+              <a href="#" class="card-popup-box">
+                <div>App Development</div>
+                <h3>Network App</h3>
+              </a>
+            </div>
+          </div>
+          <div class="portfolio-card" data-item="ui">
+            <div class="card-body">
+              <img src="./assets/images/portfolio-8.jpg" alt="portfolio icon">
+              <a href="#" class="card-popup-box">
+                <div>UI Design</div>
+                <h3>Mobile Designs</h3>
+              </a>
+            </div>
+          </div> -->
+        </div>
+
+      </section>
+
+      <!-- Modals -->
+      <!-- About Page Modal -->
+      <div id="about" class="full-site-modal page-block" data-animation="zoomInOut">
+        <div class="container-fluid">
+          <header class="modal-header">
+            <h3>ABOUT PAGE</h3>
+            <i class="fas fa-times" data-close></i> <!--data-close doesn't need a unique value in this case-->
+          </header>
+          <div class="modal-body">
+            <div class="img-wrapper">
+              <img src="./assets/images/img4.jpg" alt="user profile">
+            </div>
+            <h2>Aaron Love</h2>
+            <p>text 1</p>
+            <p>text 2</p>
+            <div>
+              <div>Email Me:</div>
+              <a href="mailto:aaronlove321@gmail.com">aaronlove321@gmail.com</a> <!--mailto will use device default mail app-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Contact Page Modal -->
+      <div id="contact" class="full-site-modal page-block" data-animation="zoomInOut">
+        <div class="container-fluid">
+          <header class="modal-header">
+            <h3>CONTACT PAGE</h3>
+            <i class="fas fa-times" data-close></i> <!--data-close doesn't need a unique value in this case-->
+          </header>
+          <div class="modal-body">
+            <div class="img-wrapper">
+              <img src="./assets/images/img4.jpg" alt="user profile">
+            </div>
+            <h2>Aaron Love</h2>
+            <p>text 1</p>
+            <p>text 2</p>
+            <div>
+              <div>Email Me:</div>
+              <a href="mailto:aaronlove321@gmail.com">aaronlove321@gmail.com</a> <!--mailto will use device default mail app-->
+            </div>
+          </div>
+        </div> 
+      </div>
+      <!--  Popup Modals -->
+      <div id="web-1" class="modal" data-animation="zoomInOutTop">
+        <div class="modal-dialog">
+          <header class="modal-header">
+            <h3>Web Project 1</h3>
+            <i class="fas fa-times" data-close></i> <!--data-close doesn't need a unique value in this case-->
+          </header>
+          <div class="modal-body">
+            <div class="img-wrapper">
+              <img src="./assets/images/portfolio-1.jpg" alt="portfolio">
+            </div>
+            <div class="text-wrapper">
+              <p><strong>my first awesome website</strong></p>
+              <p>Cupcake ipsum dolor sit amet sweet roll cupcake.
+                Brownie sesame snaps jelly-o apple pie cookie toffee
+                tart halvah. Gummies toffee pudding candy canes I
+                love toffee. Jelly I love macaroon biscuit chocolate cake.</p>
+              <p>Lollipop chocolate I love marzipan pastry jelly.
+                Gingerbread cupcake gummi bears carrot cake powder
+                sesame snaps danish gingerbread I love. Bear claw
+                jelly I love fruitcake sesame snaps fruitcake soufflé.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
     
     <script src="./js/main.js"></script>
+    <script src="./js/dynamic.js"></script>
   </body>
 </html>
