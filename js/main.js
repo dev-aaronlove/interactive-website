@@ -94,7 +94,7 @@ for (const link of filterLinks) {
   })
 }
 
-/* Full Site Modal Open Buttons*/
+/* Modal & Full Site Modal Open Buttons*/
 for (const elm of openModal) {
   elm.addEventListener('click', function() { //since using "function" instead of arrow fn: now have access to "this" 
     const modalId = this.dataset.open; //"this" refers to elm. "dataset" means "data-"
@@ -102,8 +102,32 @@ for (const elm of openModal) {
   })
 }
 
+
 for (const elm of closeModal) {
   elm.addEventListener('click', function() {
     this.parentElement.parentElement.parentElement.classList.remove(isVisible);
   })
+}
+
+// Modal
+document.addEventListener('click', (e) => {
+  if (e.target === document.querySelector('.modal.is-visible')) {
+    //clicked on backdrop area. Another way to close the modal.
+    document.querySelector('.modal.is-visible').classList.remove(isVisible);
+  }
+})
+
+document.addEventListener('keydown', (e) => {
+  if (e.key  === "Escape") {
+    document.querySelector('.modal.is-visible').classList.remove(isVisible);
+  }
+})
+
+const elmsDisplayed = getComputedStyle(root).getPropertyValue('--marquee-elms-displayed');
+const marqueeContent = document.querySelector('ul.marquee-content');
+
+root.style.setProperty('--marquee-elms', marqueeContent.children.length);
+
+for (let i = 0; i < elmsDisplayed; i++) {
+  marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
 }
