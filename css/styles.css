@@ -343,13 +343,6 @@
 .slide-ctrl-container button:nth-child(1) { padding-right: 10px; }
 .slide-ctrl-container button:nth-child(2) { padding-left: 10px; }
 
-
-
-
-
-
-
-
 /* Modal Styles */
 .modal, /*.modal is the shadow backdrop*/
 .full-site-modal {
@@ -445,4 +438,8 @@
 [data-animation="zoomInOut"].full-site-modal.is-visible,
 [data-animation="slideInOutTop"].is-visible .modal-dialog {
   transform: none; /*resets to original size*/
+}
+
+@media (max-width: 808px) {
+  .modal-body { flex-wrap: wrap; }
 }
